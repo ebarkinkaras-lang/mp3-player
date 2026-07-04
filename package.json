@@ -1,0 +1,45 @@
+{
+  "name": "futuristic-mp3-player",
+  "version": "1.0.0",
+  "description": "Futuristic MP3 Player - Standalone Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable",
+    "build-installer": "electron-builder --win nsis"
+  },
+  "author": "MP3 Player",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.futuristic.mp3player",
+    "productName": "Futuristic MP3 Player",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "style.css",
+      "app.js",
+      "icon.ico"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "icon.ico"
+    },
+    "portable": {
+      "artifactName": "FuturisticMP3Player.exe"
+    },
+    "nsis": {
+      "oneClick": true,
+      "allowToChangeInstallationDirectory": false,
+      "artifactName": "FuturisticMP3Player-Setup.exe"
+    }
+  }
+}
